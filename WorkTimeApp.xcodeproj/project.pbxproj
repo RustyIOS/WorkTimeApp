@@ -13,6 +13,7 @@
 		DA0D215529D2078A00C46684 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA0D215429D2078A00C46684 /* ViewController.swift */; };
 		DA0D215A29D2078A00C46684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA0D215929D2078A00C46684 /* Assets.xcassets */; };
 		DA0D215D29D2078A00C46684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA0D215B29D2078A00C46684 /* LaunchScreen.storyboard */; };
+		DA5A563829DC9DC80059CDC7 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5A563729DC9DC80059CDC7 /* R.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		DA0D215929D2078A00C46684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA0D215C29D2078A00C46684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA0D215E29D2078A00C46684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5A563729DC9DC80059CDC7 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F7E1AEE6F503DCBBC97CD56C /* Pods-WorkTimeApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkTimeApp.debug.xcconfig"; path = "Target Support Files/Pods-WorkTimeApp/Pods-WorkTimeApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +48,6 @@
 				F7E1AEE6F503DCBBC97CD56C /* Pods-WorkTimeApp.debug.xcconfig */,
 				2845FB264D4839A6ABEA11DE /* Pods-WorkTimeApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -71,6 +72,7 @@
 		DA0D214F29D2078A00C46684 /* WorkTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				DA5A563529DC9CA00059CDC7 /* Resources */,
 				DA0D216529D20A5100C46684 /* Application */,
 				DA0D216429D20A1A00C46684 /* SupportingFiles */,
 				DA0D215429D2078A00C46684 /* ViewController.swift */,
@@ -97,6 +99,22 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
+		DA5A563529DC9CA00059CDC7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DA5A563629DC9D820059CDC7 /* Generated */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DA5A563629DC9D820059CDC7 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				DA5A563729DC9DC80059CDC7 /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		FD06D920636C6BB5F6FAE663 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,7 @@
 				DA0D214A29D2078A00C46684 /* Frameworks */,
 				DA0D214B29D2078A00C46684 /* Resources */,
 				596667E0BE3C9633C13391A9 /* [CP] Embed Pods Frameworks */,
+				DA5A563429DC9C410059CDC7 /* R Generate */,
 			);
 			buildRules = (
 			);
@@ -212,6 +231,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DA5A563429DC9C410059CDC7 /* R Generate */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "R Generate";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/WorkTimeApp/Resources/Generated/R.generated.swift\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,6 +260,7 @@
 				DA0D215529D2078A00C46684 /* ViewController.swift in Sources */,
 				DA0D215129D2078A00C46684 /* AppDelegate.swift in Sources */,
 				DA0D215329D2078A00C46684 /* SceneDelegate.swift in Sources */,
+				DA5A563829DC9DC80059CDC7 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
